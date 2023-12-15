@@ -325,7 +325,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Download ${{ matrix.arch  }} zip
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ env.zip_name }}
 
@@ -355,7 +355,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Download amd64 darwin zip
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ env.zip_name }}
 
@@ -390,7 +390,7 @@ jobs:
           echo "pkg_name=consul_${{ env.pkg_version }}-1_${{ matrix.arch }}.deb" >> $GITHUB_ENV
 
       - name: Download workflow artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ env.pkg_name }}
 
@@ -427,7 +427,7 @@ jobs:
           echo "pkg_name=consul-${{ env.pkg_version }}-1.${{ matrix.arch }}.rpm" >> $GITHUB_ENV
 
       - name: Download workflow artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ env.pkg_name }}
 
