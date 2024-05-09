@@ -241,7 +241,7 @@ jobs:
           echo "dev_tag=${version%.*}-dev" >> $GITHUB_ENV
 
       - name: Docker Build (Action)
-        uses: hashicorp/actions-docker-build@v1
+        uses: hashicorp/actions-docker-build@v2
         with:
           version: ${{env.version}}
           target: default
@@ -266,7 +266,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: hashicorp/actions-docker-build@v1
+      - uses: hashicorp/actions-docker-build@v2
         with:
           version: ${{env.version}}
           target: ubi
@@ -294,7 +294,7 @@ jobs:
           version="${{ env.version }}"
           echo "dev_tag=${version%.*}-dev" >> $GITHUB_ENV
 
-      - uses: hashicorp/actions-docker-build@v1
+      - uses: hashicorp/actions-docker-build@v2
         with:
           version: ${{env.version}}
           target: ubi
